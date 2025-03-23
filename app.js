@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 4000
 const app = express()
 
 app.use(express.json())
-app.use(cors())
+app.use(cors({credentials : true , origin : 'https://pictora-client321.vercel.app'}))
 await connectDB()
 
 app.use('/api/user',userRouter)
